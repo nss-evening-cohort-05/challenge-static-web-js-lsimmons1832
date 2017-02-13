@@ -6,15 +6,14 @@ var treeHeight = document.getElementById("height").value;
 //get a reference to the button element in the DOM
 var button = document.getElementById("grow");
 
-//capture keypress ***NOT WORKING***
-window.addEventListener("keyPress", 
-	function(e){
-	alert("inside keyPress");
-	var key = e.which || e.keyCode;
-	if (key === 13) {
+//capture keypress 
+window.addEventListener("keydown", checkKeyPressed);
+	
+function checkKeyPressed(e){
+	if (e.keyCode === 13) {
 		verifyInput();
 	}
-}); 
+}
 
 //call build fuction when button clicked
 button.addEventListener("click", verifyInput);
@@ -26,9 +25,9 @@ var treeArray = {
 };
 
 function verifyInput() {
-  if (treeHeight === "") {
+  if (treeArray.height === "") {
     alert("Please enter height");
-  		} else if (treeChar === "") {
+  		} else if (treeArray.character === "") {
     alert("Please enter character");
   	} 
   buildTree(treeArray);
