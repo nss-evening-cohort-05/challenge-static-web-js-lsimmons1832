@@ -15,7 +15,7 @@ function checkKeyPressed(e){
 	}
 }
 
-//call build fuction when button clicked
+//call verify fuction when button clicked
 button.addEventListener("click", verifyInput);
 
 
@@ -38,14 +38,14 @@ function verifyInput() {
 function buildTree(treeArray) {
 	treeArray.character = document.getElementById("character").value;
 	treeArray.height = document.getElementById("height").value;
-  var tree = "";
+  
   var treeString = "";
-  console.log(treeArray);
-  console.log(treeArray.height);
+  
   //do math on user input
   for (var i = 0; i < treeArray.height; i++) {
     var char = 2 * i + 1;
     var space = treeArray.height - (i + 1);
+  	
   	//add spaces to space variable
   	for (var j = 0; j < space; j++) {
   		treeString += " ";
