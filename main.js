@@ -1,6 +1,6 @@
 //capture user input
-var treeChar = document.getElementById("character").value;
-var treeHeight = document.getElementById("height").value;
+var treeChar = document.getElementById("character");
+var treeHeight = document.getElementById("height");
 
 
 //get a reference to the button element in the DOM
@@ -19,18 +19,19 @@ function checkKeyPressed(e){
 button.addEventListener("click", verifyInput);
 
 
-var treeArray = {
-  height: treeHeight.value,
-  character: treeChar.value
-};
 
 function verifyInput() {
-  if (treeArray.height === "") {
-    alert("Please enter height");
-  		} else if (treeArray.character === "") {
-    alert("Please enter character");
-  	} 
-  buildTree(treeArray);
+  var treeArray = {
+    height: treeHeight.value,
+    character: treeChar.value
+  };
+
+  if (treeArray.height === "" || treeArray.character === "") {
+    alert("Please enter requested information.");
+  } 
+  else {
+    buildTree(treeArray);
+  }
 }
 
 
